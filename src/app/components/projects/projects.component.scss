@@ -1,0 +1,55 @@
+//------- SCCS FILES--------------//
+
+@import '../Portfolio/src/vars.scss';
+
+//------ STYLE------------------//
+
+.container{
+    margin:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        font-family:$roboto;
+        font-size: 1.5rem;
+    }
+    hr{
+        margin-top: 5px;
+        width: 60px;
+        
+    }
+    ul{
+        margin-top: 30px;
+        display: flex;
+        flex-flow: row wrap;
+        .project{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            list-style: none;
+            padding: 10px;
+            .image img{
+                width: 70px;
+                height: 70px;
+                border-radius: 100px;
+                border: 1px solid grey;
+                color: $clear;
+                text-align: center;
+                margin-bottom:18px;
+                object-fit: cover;
+
+            }
+            h3{
+                font-family: $montserrat;
+                font-size: 1rem;
+                color: $dark;
+
+            }
+            p{
+                font-family: $roboto;
+                color: $dark;
+            }
+        }
+    }
+}

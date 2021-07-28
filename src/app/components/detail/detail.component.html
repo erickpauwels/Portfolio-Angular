@@ -1,0 +1,30 @@
+
+<div class="container" *ngIf="project">
+
+		<h1>{{project.name}}</h1>
+		<h3>{{project.description}}</h3>
+		<p>Category: {{project.category}}</p>
+		<p>Language: {{project.langs}}</p>
+		<p>Year: {{project.year}}</p>
+
+		<div class="image" *ngIf="project.image">
+			<img src="{{url+'get_image/'+project.image}}"/>
+		</div>
+
+		<!-- Edit Project -->
+
+		<div class="btn_container"  *ngIf="confirm == false">
+			<a [routerLink]="['/edit_project', project._id]" class="button_edit">Edit</a>
+			<a (click)="setConfirm(true)" class="button_delete">Delete</a>
+		</div>
+
+
+		<!-- delete rpoject  -->
+
+		<div class="btn_container" *ngIf="confirm == true">
+			<span class="confirm">Do you really want to delete it?</span>
+			<a (click)="setConfirm(false)" class="button_edit">Cancel</a>
+			<a (click)="deleteProject(project._id)" class="button_delete">Definitively delete it! </a>
+		</div>
+	
+</div>

@@ -1,0 +1,102 @@
+/* ------------------ Variables--------------------*/
+
+//----COLORS---//
+
+$clear: white;
+$dark: rgb(41, 41, 41);
+$secondary: rgb(0, 0, 160);
+$actived_color: rgb(0, 165, 0);
+$delete: rgb(255, 52, 52);
+$hover_delete: rgb(161, 15, 15);
+$hover_edit: rgb(13, 112, 13);
+
+//---FONTS----//
+
+$logoFont: 'Newsreader', serif;
+$montserrat : 'Montserrat', sans-serif;
+$roboto: 'Roboto Mono', monospace;
+
+/*----------------- Helpers------------------------ */
+
+%form_container{
+    margin: 80px 10%;
+    h2{
+        font-family: $montserrat;
+        color: $dark;
+    }
+    .success{
+        
+        height: 40px;
+        margin: 20px;
+        font-size: 1rem;
+        font-family: $montserrat;
+        color: $clear;
+        background-color: $actived_color;
+        padding: 10px;        
+        text-align: center;
+        a{
+            text-decoration: underline;
+            color: $clear;
+        }
+    }
+    form {
+        width: 80%;
+        margin: 30px;
+        p{
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            label   {
+                margin-bottom: 5px;
+                font-family: $roboto;
+                font-size: 1rem;
+            }
+            textarea{
+                width: 30%;
+                height: 70px;
+            }
+            input{
+                width: 30%;
+                height: 40px;
+                padding: 10px;
+            }
+            #input_image{
+                width: 100%;
+            }
+        
+        }
+        .btn{
+            border: 0;
+            border-radius: 5px;
+            box-shadow: none;
+            background-color: $actived_color;
+            color: $clear;
+            margin-top: 30px;
+            width: 80px;
+            height: 40px;
+            font-size: 1rem;
+            padding: 5px;
+            transition: all 0.3s ease-out;
+            &:hover{
+                background-color: $hover_edit;
+                box-shadow: 2px 2px 5px $dark;
+                cursor: pointer;
+            }
+            &:active{
+                box-shadow: none;
+                color: $clear;
+            }
+            &:disabled{
+                background-color: grey;
+                opacity: 0.5;
+                box-shadow: none;
+                cursor: not-allowed;
+            }
+        }
+        .form_error{
+            font-family: $roboto;
+            color: rgba(255, 23, 23, 0.904);
+            margin-top: 10px;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<div id="container" *ngIf="project">
+    <h2>{{title}}</h2>
+
+    <!-- FORM -->
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
+        </p>
+        <span *ngIf="name.touched && !name.valid" class="form_error">
+            The name is required!
+        </span>
+        <p>
+            <label for="description">Description</label>
+            <textarea type="text" name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+        </p>
+        <span *ngIf="description.touched && !description.valid" class="form_error">
+            The description is required!
+        </span>
+        <p>
+            <label for="category">Category</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required/>
+        </p>
+        <span *ngIf="category.touched && !category.valid" class="form_error">
+            The category is required!
+        </span>
+        <p>
+            <label for="year">Year</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" required/>
+        </p>
+        <span *ngIf="year.touched && !year.valid" class="form_error">
+            The year is required!
+        </span>
+        <p>
+            <label for="langs">Language</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required/>
+        </p>
+        <span *ngIf="langs.touched && !langs.valid" class="form_error">
+            The Language is required!
+        </span>
+
+        <!-- Upload Image  -->
+
+        <p>
+			<label for="image">Image</label>
+			<span class="image" *ngIf="project.image" style="float:none;" >
+				<img src="{{url+'get_image/'+project.image}}" *ngIf="project.image" style="width:100px;"/>
+			</span>
+			<input type="file" name="image" placeholder="Upload Image" (change)="fileChangeEvent($event)"/>
+		</p>
+
+        <!-- Button  -->
+
+        <input type="submit" value="Send" class="btn" [disabled]="!projectForm.form.valid"/>
+        <span *ngIf="!projectForm.form.valid" class="form_error">
+            Complete the inputs!
+        </span>
+   </form>
+
+   <!-- Status Message  -->
+
+   <div class="success" *ngIf="status == 'success'">
+    The project is saved successfully! -- check out <a [routerLink]="['/project', save_project._id]">here</a>
+    </div>
+
+    <div class="failed" *ngIf="status == 'failed'">
+        The project its not saved!
+    </div>
+
+</div> 

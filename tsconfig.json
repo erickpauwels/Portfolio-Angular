@@ -21,10 +21,10 @@
       "dom"
     ]
   },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
+  "angularCompilerOptions": {        
+    "enableI18nLegacyMessageIdFormat": true,
     "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictInputAccessModifiers":true,
+    "strictTemplates": true ,
   }
 }

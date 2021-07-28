@@ -1,0 +1,61 @@
+
+
+//------- SCCS FILES--------------//
+
+@import '../Portfolio/src/vars.scss';
+
+//------ STYLE------------------//
+
+header { 
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    #logo{
+        font-family: $logoFont;
+        color: $dark;
+        font-size: 2rem;
+    }
+    ul{
+        display: flex;
+        li{
+            font-family: $montserrat;
+            font-size: 1.5rem;
+            margin: 10px;
+            list-style: none;
+            transition: all 0.3s ease-out;
+            &:hover{
+                font-size: 2rem;
+                color: $secondary;
+            }
+            .actived{
+                color: $actived_color;
+            }
+        }
+    }
+}
+
+#title{
+    margin-top: 30px;
+    text-align: center;
+    font-family: $montserrat;  
+}
+
+.about{
+    margin: 30px 10% ;
+    text-align: justify;
+    h2{
+        font-family: $montserrat;
+        font-size: 20px;
+    }
+    p{
+        font-family: $roboto;
+        margin-top:15px;
+    }
+}
+
+footer{
+    margin: 10%;
+    font-family: $roboto;
+}

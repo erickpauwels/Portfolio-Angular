@@ -1,0 +1,10 @@
+//------- SCCS FILES--------------//
+
+@import '../Portfolio/src/vars.scss';
+
+//------ STYLE------------------//
+
+
+#container{
+    @extend %form_container;
+}

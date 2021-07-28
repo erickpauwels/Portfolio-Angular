@@ -1,0 +1,70 @@
+//------- SCCS FILES--------------//
+
+@import '../Portfolio/src/vars.scss';
+
+//------ STYLE------------------//
+
+.container{
+    margin:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-family: $montserrat;
+        font-size: 1.5rem;
+        color: $dark;
+    }
+    h3, p{
+        margin-top: 20px;
+        font-family: $roboto;
+        font-size: 1rem;
+        color: $dark;
+    }
+
+    .image img{
+        margin: 30px;
+        width: 350px;
+        height: 250px;
+        border-radius: 10px;
+        border: 1px solid grey;
+        margin-bottom:18px;
+        object-fit: cover;
+    }
+    .btn_container{
+        margin-top: 15px;
+        a{
+            margin: 10px;
+            font-size: 1rem;
+            font-family: $roboto;
+            padding: 10px;
+            border-radius: 5px;    
+            color: $clear;
+            box-shadow: 2px 1px 5px $dark;
+        }
+        .button_delete{  
+            background-color: $delete;
+            transition: all 0.3s ease-out;
+            &:hover{
+                cursor: pointer;
+                background-color: $hover_delete;
+            }
+            &:active{
+                box-shadow: none;
+            }
+            }
+        .button_edit{
+            background-color: $actived_color;
+            &:hover{
+             background-color: $hover_edit;
+             cursor: pointer;
+
+            }
+            &:active{
+                box-shadow: none;
+            }
+        }
+        .confirm{
+            font-family: $roboto;
+        }
+    }
+}
